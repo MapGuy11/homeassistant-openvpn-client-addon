@@ -1,0 +1,20 @@
+{
+  "name": "OpenVPN Client",
+  "version": "0.0.1",
+  "slug": "openvpn_client",
+  "description": "OpenVPN Client",
+  "url": "https://github.com/Ailme/homeassistant-openvpn-client-addon",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "startup": "application",
+  "init": "false",
+  "boot": "auto",
+  "host_network": true,
+  "privileged": ["NET_ADMIN"],
+  "options": {
+    "ovpnfile": "client.ovpn"
+  },
+  "schema": {
+    "ovpnfile": "str"
+  },
+  "map" : ["share:rw"]
+}
