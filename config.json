@@ -1,9 +1,9 @@
 {
   "name": "OpenVPN Client",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "slug": "openvpn_client",
   "description": "OpenVPN Client",
-  "url": "https://github.com/Ailme/homeassistant-openvpn-client-addon",
+  "url": "https://github.com/MapGuy11/homeassistant-openvpn-client-addon",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
   "startup": "application",
   "init": "false",
