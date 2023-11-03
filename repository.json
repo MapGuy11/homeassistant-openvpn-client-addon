@@ -1,6 +1,6 @@
 {
     "name": "OpenVPN Client",
     "url": "https://github.com/MapGuy11/homeassistant-openvpn-client",
-    "maintainer": "NEW: Connor Hackenberg <me@connorhackenberg.tech> FORMER: Alexandr Tumaykin <alexandrtumaykin@gmail.com>"
+    "maintainer": "Connor Hackenberg <me@connorhackenberg.tech>"
   }
   
