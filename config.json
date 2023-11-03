@@ -1,6 +1,6 @@
 {
   "name": "OpenVPN Client",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "slug": "openvpn_client",
   "description": "A secure way to send your data through any OpenVPN Server",
   "url": "https://github.com/MapGuy11/homeassistant-openvpn-client-addon",
