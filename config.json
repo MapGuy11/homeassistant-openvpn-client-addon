@@ -11,10 +11,10 @@
   "host_network": true,
   "privileged": ["NET_ADMIN"],
   "options": {
-    "OpenVPN Client File": "client.ovpn"
+    "ovpnfile": "client.ovpn"
   },
   "schema": {
-    "OpenVPN Client File": "str"
+    "ovpnfile": "str"
   },
   "map" : ["config:rw"]
 }
