@@ -2,9 +2,10 @@
 set +u
 
 CONFIG_PATH=/data/options.json
+OPENVPN_CONFIG_PATH=/config/openvpnclient
 
 OVPNFILE="$(jq --raw-output '.ovpnfile' $CONFIG_PATH)"
-OPENVPN_CONFIG=/share/${OVPNFILE}
+OPENVPN_CONFIG=/config/openvpnclient/${OVPNFILE}
 
 ########################################################################################################################
 # Initialize the tun interface for OpenVPN if not already available
@@ -14,7 +15,7 @@ OPENVPN_CONFIG=/share/${OVPNFILE}
 #   None
 ########################################################################################################################
 function init_tun_interface(){
-    # create the tunnel for the openvpn client
+    # create the tunnel for the OpenVPN client
 
     mkdir -p /dev/net
     if [ ! -c /dev/net/tun ]; then
@@ -37,7 +38,7 @@ function check_files_available(){
 
     if [[ ! -f ${OPENVPN_CONFIG} ]]
     then
-        echo "File ${OPENVPN_CONFIG} not found"
+        echo "We could not find your ${OPENVPN_CONFIG}. Did you put it in the ${OPENVPN_CONFIG_PATH} directory?"
         failed=1
         break
     fi
@@ -64,7 +65,7 @@ function check_files_available(){
 ########################################################################################################################
 function wait_configuration(){
 
-    echo "Wait until the user uploads the files."
+    echo "Waiting for user to put the OpenVPN configuration file in ${OPENVPN_CONFIG_PATH}"
     # therefore, wait until the user upload the required certification files
     while true; do
 
@@ -87,9 +88,11 @@ wait_configuration
 
 echo""
 echo""
-echo""
 echo "Setting up the VPN connection with the following OpenVPN configuration: ${OPENVPN_CONFIG}"
 echo""
+echo""
+
+echo"Try to connect to your OpenVPN server using, ${OPENVPN_CONFIG}"
 echo""
 echo""
 
