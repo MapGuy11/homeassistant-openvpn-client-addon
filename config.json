@@ -16,5 +16,5 @@
   "schema": {
     "OpenVPN Client File": "str"
   },
-  "map" : ["share:rw"]
+  "map" : ["config:ro"]
 }
