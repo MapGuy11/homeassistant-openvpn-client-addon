@@ -92,7 +92,7 @@ echo "Setting up the VPN connection with the following OpenVPN configuration: ${
 echo""
 echo""
 
-echo"Try to connect to your OpenVPN server using, ${OPENVPN_CONFIG}"
+echo"Trying to connect to your OpenVPN server using, ${OPENVPN_CONFIG}"
 echo""
 echo""
 
