@@ -88,7 +88,7 @@ wait_configuration
 echo""
 echo""
 echo""
-echo "Setup the VPN connection with the following OpenVPN configuration: ${OPENVPN_CONFIG}"
+echo "Setting up the VPN connection with the following OpenVPN configuration: ${OPENVPN_CONFIG}"
 echo""
 echo""
 echo""
