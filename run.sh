@@ -38,6 +38,7 @@ function check_files_available(){
     if [[ ! -f ${OPENVPN_CONFIG} ]]
     then
         echo "We could not find your ${OPENVPN_CONFIG}. Did you put it in the ${OPENVPN_CONFIG_PATH} directory?"
+        echo ""
         failed=1
         break
     fi
