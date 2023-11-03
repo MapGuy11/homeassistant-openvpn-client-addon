@@ -7,3 +7,5 @@ Try to tell the user the .ovpn file before it's run.
 Change the OpenVPN configuration directory. It is now easier in the /config/openvpnclient directory.
 ## Quality Changes:
 Add better logs so if there is an issue you will see it more prominently.
+# 2.0.2
+## Fixing it!
