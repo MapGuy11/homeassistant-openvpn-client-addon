@@ -85,7 +85,13 @@ init_tun_interface
 # wait until the user uploaded the configuration files
 wait_configuration
 
-echo "Setup the VPN connection with the following OpenVPN configuration."
+echo""
+echo""
+echo""
+echo "Setup the VPN connection with the following OpenVPN configuration: ${OPENVPN_CONFIG}"
+echo""
+echo""
+echo""
 
 # try to connect to the server using the used defined configuration
 openvpn --config ${OPENVPN_CONFIG}
