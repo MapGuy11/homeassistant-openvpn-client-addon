@@ -1,4 +1,4 @@
-# OpenVPN Client Add-On
+# Home Assistant OpenVPN Client Add-On
 
 ## About: 
 This is an Add-On for [Home Assistant](https://www.home-assistant.io) which enables you to tunnel some or all the communication of your Home Assistant server with the world through an OpenVPN connection.
