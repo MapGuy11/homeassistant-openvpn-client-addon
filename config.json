@@ -5,7 +5,7 @@
   "description": "A secure way to send your data through any OpenVPN Server",
   "url": "https://github.com/MapGuy11/homeassistant-openvpn-client-addon",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
-  "startup": "application",
+  "startup": "system",
   "init": "false",
   "boot": "auto",
   "host_network": true,
