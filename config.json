@@ -16,5 +16,5 @@
   "schema": {
     "ovpnfile": "str"
   },
-  "map" : ["config:rw"]
+  "map" : ["config:ro"]
 }
