@@ -2,10 +2,10 @@
 set +u
 
 CONFIG_PATH=/data/options.json
-OPENVPN_CONFIG_PATH=/config/openvpnclient
+OPENVPN_CONFIG_PATH=/config
 
 OVPNFILE="$(jq --raw-output '.ovpnfile' $CONFIG_PATH)"
-OPENVPN_CONFIG=/config/openvpnclient/${OVPNFILE}
+OPENVPN_CONFIG=/config/${OVPNFILE}
 
 ########################################################################################################################
 # Initialize the tun interface for OpenVPN if not already available
@@ -22,7 +22,6 @@ function init_tun_interface(){
         mknod /dev/net/tun c 10 200
     fi
 }
-
 ########################################################################################################################
 # Check if all required files are available.
 # Globals:
