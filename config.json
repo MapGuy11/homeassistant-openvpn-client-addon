@@ -1,6 +1,6 @@
 {
   "name": "OpenVPN Client",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "slug": "openvpn_client",
   "description": "A secure way to send your data through any OpenVPN Server",
   "url": "https://github.com/MapGuy11/homeassistant-openvpn-client-addon",
@@ -11,10 +11,14 @@
   "host_network": true,
   "privileged": ["NET_ADMIN"],
   "options": {
-    "ovpnfile": "client.ovpn"
+    "ovpnfile": "",
+    "username": "",
+    "password": ""
   },
   "schema": {
-    "ovpnfile": "str"
+    "ovpnfile": "str",
+    "username": "str",
+    "password": "str"
   },
   "map" : ["config:ro"]
 }
