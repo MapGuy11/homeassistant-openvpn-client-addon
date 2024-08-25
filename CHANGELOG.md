@@ -11,3 +11,5 @@ Add better logs so if there is an issue you will see it more prominently.
 ## Fixing it!
 # 2.0.3
 Final check it's all good to update fully now! The new client location is in the /config directory!
+# 2.0.4
+Add user and password management from configuration tab if ovpn required authentication
