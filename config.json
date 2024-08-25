@@ -11,9 +11,9 @@
   "host_network": true,
   "privileged": ["NET_ADMIN"],
   "options": {
-    "ovpnfile": "client.ovpn",
-    "username": "",
-    "password": ""
+    "ovpnfile": "yourovpnfile.ovpn",
+    "username": "Username",
+    "password": "Password"
   },
   "schema": {
     "ovpnfile": "str",
