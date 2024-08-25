@@ -103,8 +103,5 @@ else
     AUTH_OPTION=""
 fi
 
-echo "Trying to connect to your OpenVPN server using, ${OPENVPN_CONFIG}"
-echo ""
-
 # try to connect to the server using the user-defined configuration and credentials (if provided)
 openvpn --config ${OPENVPN_CONFIG} $AUTH_OPTION
