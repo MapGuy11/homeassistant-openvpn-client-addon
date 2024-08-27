@@ -13,3 +13,5 @@ Add better logs so if there is an issue you will see it more prominently.
 Final check it's all good to update fully now! The new client location is in the /config directory!
 # 2.0.4
 Add user and password management from the configuration tab if the OVPN server requires authentication. Thank you [@Izakun](https://github.com/Izakun) for the contribution!
+# 2.0.5
+Add passphrase management from the configuration tab if the .ovpn have a tls-auth

@@ -10,6 +10,8 @@ OPENVPN_CONFIG=/config/${OVPNFILE}
 USERNAME="$(jq --raw-output '.username' $CONFIG_PATH)"
 PASSWORD="$(jq --raw-output '.password' $CONFIG_PATH)"
 
+PASSPHRASE="$(jq --raw-output '.passphrase' $CONFIG_PATH)"
+
 ########################################################################################################################
 # Initialize the tun interface for OpenVPN if not already available
 # Arguments:
@@ -90,18 +92,28 @@ echo "Setting up the VPN connection with the following OpenVPN configuration: ${
 echo ""
 echo ""
 
-AUTH_FILE="/etc/openvpn/auth.txt"
+if [[ -n "$PASSPHRASE" ]]; then
+    echo "Using private key passphrase for authentication"
+    PASSPHRASE_FILE="/etc/openvpn/passphrase.txt"
+    echo "$PASSPHRASE" > $PASSPHRASE_FILE
+    chmod 600 $PASSPHRASE_FILE
+    AUTH_OPTION="--config ${OPENVPN_CONFIG} --askpass $PASSPHRASE_FILE"
 
-if [[ -n "$USERNAME" ]] && [[ -n "$PASSWORD" ]]; then
+elif [[ -n "$USERNAME" ]] && [[ -n "$PASSWORD" ]]; then
     echo "Using provided username and password"
+    AUTH_FILE="/etc/openvpn/auth.txt"
     echo "$USERNAME" > $AUTH_FILE
     echo "$PASSWORD" >> $AUTH_FILE
     chmod 600 $AUTH_FILE
-    AUTH_OPTION="--auth-user-pass $AUTH_FILE"
+    AUTH_OPTION="--config ${OPENVPN_CONFIG} --auth-user-pass $AUTH_FILE"
+
 else
-    echo "No username and password provided, skipping auth-user-pass"
-    AUTH_OPTION=""
+    echo "No username/password or private key passphrase provided, trying to connect without authentication"
+    AUTH_OPTION="--config ${OPENVPN_CONFIG}"
 fi
 
+echo "Trying to connect to your OpenVPN server using ${OPENVPN_CONFIG}"
+echo ""
+
 # try to connect to the server using the user-defined configuration and credentials (if provided)
-openvpn --config ${OPENVPN_CONFIG} $AUTH_OPTION
+openvpn $AUTH_OPTION
